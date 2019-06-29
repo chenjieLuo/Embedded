@@ -1,1 +1,1 @@
-This repository is created for an embedded system design
+This repository is created for an embedded system design.
