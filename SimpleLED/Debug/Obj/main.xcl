@@ -1,14 +1,14 @@
-"C:\Users\dell-pc\Documents\Embedded_Programming\Lesson1\main.c"
+"C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\main.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -MD
 -MF
-C:\Users\dell-pc\Documents\Embedded_Programming\Lesson1\Debug\Obj\main.pbi.dep
+C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\Debug\Obj\main.pbi.dep
 -o
 main.pbi
 -I
-C:\Users\dell-pc\Documents\Embedded_Programming\Lesson1
+C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\arm\inc
 -I

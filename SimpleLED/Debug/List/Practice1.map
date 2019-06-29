@@ -1,20 +1,20 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.40.1.212/W32 for ARM                  28/Jun/2019  22:51:49
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  29/Jun/2019  15:29:38
 # Copyright 2007-2019 IAR Systems AB.
 #
 #    Output file  =
-#        C:\Users\dell-pc\Documents\Embedded_Programming\Lesson1\Debug\Exe\Practice1.out
+#        C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\Debug\Exe\Practice1.out
 #    Map file     =
-#        C:\Users\dell-pc\Documents\Embedded_Programming\Lesson1\Debug\List\Practice1.map
+#        C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\Debug\List\Practice1.map
 #    Command line =
-#        -f C:\Users\dell-pc\AppData\Local\Temp\EW5B8C.tmp
-#        (C:\Users\dell-pc\Documents\Embedded_Programming\Lesson1\Debug\Obj\main.o
+#        -f C:\Users\dell-pc\AppData\Local\Temp\EWE410.tmp
+#        (C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\Debug\Obj\main.o
 #        --no_out_extension -o
-#        C:\Users\dell-pc\Documents\Embedded_Programming\Lesson1\Debug\Exe\Practice1.out
+#        C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\Debug\Exe\Practice1.out
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
 #        --map
-#        C:\Users\dell-pc\Documents\Embedded_Programming\Lesson1\Debug\List\Practice1.map
+#        C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\Debug\List\Practice1.map
 #        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
 #        8.3\arm\config\linker\TexasInstruments\LM4F120E5QR.icf" --semihosting
 #        --entry __iar_program_start --vfe --text_out locale)
@@ -57,21 +57,21 @@ initialize by copy { rw };
   .intvec            ro code          0x0   0x40  vector_table_M.o [3]
                                    - 0x40   0x40
 
-"P1":                                      0x140
-  .text              ro code         0x40   0x70  main.o [1]
-  .text              ro code         0xb0   0x2e  copy_init3.o [3]
-  .text              ro code         0xde    0x2  vector_table_M.o [3]
-  .text              ro code         0xe0   0x28  data_init.o [3]
-  .iar.init_table    const          0x108   0x14  - Linker created -
-  .text              ro code        0x11c   0x1e  cmain.o [3]
-  .text              ro code        0x13a    0x4  low_level_init.o [2]
-  .text              ro code        0x13e    0x4  exit.o [2]
-  .text              ro code        0x144    0xa  cexit.o [3]
-  .text              ro code        0x150   0x14  exit.o [4]
-  Initializer bytes  const          0x164   0x10  <for P2-1>
-  .text              ro code        0x174    0xc  cstartup_M.o [3]
-  .rodata            const          0x180    0x0  copy_init3.o [3]
-                                  - 0x180  0x140
+"P1":                                      0x164
+  .text              ro code         0x40   0x94  main.o [1]
+  .text              ro code         0xd4   0x2e  copy_init3.o [3]
+  .text              ro code        0x102    0x2  vector_table_M.o [3]
+  .text              ro code        0x104   0x28  data_init.o [3]
+  .iar.init_table    const          0x12c   0x14  - Linker created -
+  .text              ro code        0x140   0x1e  cmain.o [3]
+  .text              ro code        0x15e    0x4  low_level_init.o [2]
+  .text              ro code        0x162    0x4  exit.o [2]
+  .text              ro code        0x168    0xa  cexit.o [3]
+  .text              ro code        0x174   0x14  exit.o [4]
+  Initializer bytes  const          0x188   0x10  <for P2-1>
+  .text              ro code        0x198    0xc  cstartup_M.o [3]
+  .rodata            const          0x1a4    0x0  copy_init3.o [3]
+                                  - 0x1a4  0x164
 
 "P2", part 1 of 2:                          0x10
   P2-1                        0x2000'0000   0x10  <Init block>
@@ -90,7 +90,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-        0x180     0x1'ffff  0x1'fe80
+        0x1a4     0x1'ffff  0x1'fe5c
   0x2000'0810  0x2000'7fff    0x77f0
 
 
@@ -102,7 +102,7 @@ Unused ranges:
           -------      ----
 Copy (__iar_copy_init3)
     1 source range, total size 0x10:
-                0x164  0x10
+                0x188  0x10
     1 destination range, total size 0x10:
           0x2000'0000  0x10
 
@@ -118,10 +118,10 @@ command line/config:
     -------------------------------------------
     Total:
 
-C:\Users\dell-pc\Documents\Embedded_Programming\Lesson1\Debug\Obj: [1]
-    main.o                112       16       16
+C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\Debug\Obj: [1]
+    main.o                148       16       16
     -------------------------------------------
-    Total:                112       16       16
+    Total:                148       16       16
 
 dl7M_tln.a: [2]
     exit.o                  4
@@ -147,7 +147,7 @@ shb_l.a: [4]
     Gaps                    4
     Linker created                  20    2'048
 -----------------------------------------------
-    Grand Total:          348       36    2'064
+    Grand Total:          384       36    2'064
 
 
 *******************************************************************************
@@ -156,37 +156,37 @@ shb_l.a: [4]
 
 Entry                       Address  Size  Type      Object
 -----                       -------  ----  ----      ------
-.iar.init_table$$Base         0x108         --   Gb  - Linker created -
-.iar.init_table$$Limit        0x11c         --   Gb  - Linker created -
-?main                         0x11d        Code  Gb  cmain.o [3]
+.iar.init_table$$Base         0x12c         --   Gb  - Linker created -
+.iar.init_table$$Limit        0x140         --   Gb  - Linker created -
+?main                         0x141        Code  Gb  cmain.o [3]
 Analog_digitalControl   0x2000'0008   0x4  Data  Gb  main.o [1]
 CSTACK$$Base            0x2000'0010         --   Gb  - Linker created -
 CSTACK$$Limit           0x2000'0810         --   Gb  - Linker created -
 GPIO_F_port_Control     0x2000'0000   0x4  Data  Gb  main.o [1]
 RGBControl              0x2000'000c   0x4  Data  Gb  main.o [1]
-Region$$Table$$Base           0x108         --   Gb  - Linker created -
-Region$$Table$$Limit          0x11c         --   Gb  - Linker created -
-__cmain                       0x11d        Code  Gb  cmain.o [3]
-__exit                        0x151  0x14  Code  Gb  exit.o [4]
-__iar_copy_init3               0xb1  0x2e  Code  Gb  copy_init3.o [3]
-__iar_data_init3               0xe1  0x28  Code  Gb  data_init.o [3]
-__iar_program_start           0x175        Code  Gb  cstartup_M.o [3]
-__low_level_init              0x13b   0x4  Code  Gb  low_level_init.o [2]
+Region$$Table$$Base           0x12c         --   Gb  - Linker created -
+Region$$Table$$Limit          0x140         --   Gb  - Linker created -
+__cmain                       0x141        Code  Gb  cmain.o [3]
+__exit                        0x175  0x14  Code  Gb  exit.o [4]
+__iar_copy_init3               0xd5  0x2e  Code  Gb  copy_init3.o [3]
+__iar_data_init3              0x105  0x28  Code  Gb  data_init.o [3]
+__iar_program_start           0x199        Code  Gb  cstartup_M.o [3]
+__low_level_init              0x15f   0x4  Code  Gb  low_level_init.o [2]
 __vector_table                  0x0        Data  Gb  vector_table_M.o [3]
-_call_main                    0x129        Code  Gb  cmain.o [3]
-_exit                         0x145        Code  Gb  cexit.o [3]
-_main                         0x137        Code  Gb  cmain.o [3]
-exit                          0x13f   0x4  Code  Gb  exit.o [2]
-main                           0x41  0x70  Code  Gb  main.o [1]
+_call_main                    0x14d        Code  Gb  cmain.o [3]
+_exit                         0x169        Code  Gb  cexit.o [3]
+_main                         0x15b        Code  Gb  cmain.o [3]
+exit                          0x163   0x4  Code  Gb  exit.o [2]
+main                           0x41  0x94  Code  Gb  main.o [1]
 pinInOutControl         0x2000'0004   0x4  Data  Gb  main.o [1]
 
 
-[1] = C:\Users\dell-pc\Documents\Embedded_Programming\Lesson1\Debug\Obj
+[1] = C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\Debug\Obj
 [2] = dl7M_tln.a
 [3] = rt7M_tl.a
 [4] = shb_l.a
 
-    348 bytes of readonly  code memory
+    384 bytes of readonly  code memory
      36 bytes of readonly  data memory
   2'064 bytes of readwrite data memory
 

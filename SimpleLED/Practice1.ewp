@@ -2106,4 +2106,7 @@
     <file>
         <name>$PROJ_DIR$\main.c</name>
     </file>
+    <file>
+        <name>$PROJ_DIR$\tm4c123gxl.h</name>
+    </file>
 </project>
