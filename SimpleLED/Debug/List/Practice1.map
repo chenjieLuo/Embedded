@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.40.1.212/W32 for ARM                  29/Jun/2019  15:29:38
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  29/Jun/2019  20:33:35
 # Copyright 2007-2019 IAR Systems AB.
 #
 #    Output file  =
@@ -8,7 +8,7 @@
 #    Map file     =
 #        C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\Debug\List\Practice1.map
 #    Command line =
-#        -f C:\Users\dell-pc\AppData\Local\Temp\EWE410.tmp
+#        -f C:\Users\dell-pc\AppData\Local\Temp\EW2919.tmp
 #        (C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\Debug\Obj\main.o
 #        --no_out_extension -o
 #        C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\Debug\Exe\Practice1.out
@@ -49,62 +49,40 @@ define block CSTACK with size = 2K, alignment = 8 { };
 define block HEAP with size = 8K, alignment = 8 { };
 "P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
           rw, block CSTACK, block HEAP };
-initialize by copy { rw };
 
-  Section            Kind         Address   Size  Object
-  -------            ----         -------   ----  ------
-"A0":                                       0x40
-  .intvec            ro code          0x0   0x40  vector_table_M.o [3]
-                                   - 0x40   0x40
+No sections matched the following patterns:
 
-"P1":                                      0x164
-  .text              ro code         0x40   0x94  main.o [1]
-  .text              ro code         0xd4   0x2e  copy_init3.o [3]
-  .text              ro code        0x102    0x2  vector_table_M.o [3]
-  .text              ro code        0x104   0x28  data_init.o [3]
-  .iar.init_table    const          0x12c   0x14  - Linker created -
-  .text              ro code        0x140   0x1e  cmain.o [3]
-  .text              ro code        0x15e    0x4  low_level_init.o [2]
-  .text              ro code        0x162    0x4  exit.o [2]
-  .text              ro code        0x168    0xa  cexit.o [3]
-  .text              ro code        0x174   0x14  exit.o [4]
-  Initializer bytes  const          0x188   0x10  <for P2-1>
-  .text              ro code        0x198    0xc  cstartup_M.o [3]
-  .rodata            const          0x1a4    0x0  copy_init3.o [3]
-                                  - 0x1a4  0x164
+  rw  in "P2"
 
-"P2", part 1 of 2:                          0x10
-  P2-1                        0x2000'0000   0x10  <Init block>
-    .data            inited   0x2000'0000    0x4  main.o [1]
-    .data            inited   0x2000'0004    0x4  main.o [1]
-    .data            inited   0x2000'0008    0x4  main.o [1]
-    .data            inited   0x2000'000c    0x4  main.o [1]
-                            - 0x2000'0010   0x10
 
-"P2", part 2 of 2:                         0x800
-  CSTACK                      0x2000'0010  0x800  <Block>
-    CSTACK           uninit   0x2000'0010  0x800  <Block tail>
-                            - 0x2000'0810  0x800
+  Section   Kind         Address   Size  Object
+  -------   ----         -------   ----  ------
+"A0":                              0x40
+  .intvec   ro code          0x0   0x40  vector_table_M.o [3]
+                          - 0x40   0x40
+
+"P1":                              0xe8
+  .text     ro code         0x40   0x94  main.o [1]
+  .text     ro code         0xd4   0x1e  cmain.o [3]
+  .text     ro code         0xf2    0x4  low_level_init.o [2]
+  .text     ro code         0xf6    0x4  exit.o [2]
+  .text     ro code         0xfa    0x2  vector_table_M.o [3]
+  .text     ro code         0xfc    0xa  cexit.o [3]
+  .text     ro code        0x108   0x14  exit.o [4]
+  .text     ro code        0x11c    0xc  cstartup_M.o [3]
+                         - 0x128   0xe8
+
+"P2":                             0x800
+  CSTACK             0x2000'0000  0x800  <Block>
+    CSTACK  uninit   0x2000'0000  0x800  <Block tail>
+                   - 0x2000'0800  0x800
 
 Unused ranges:
 
          From           To      Size
          ----           --      ----
-        0x1a4     0x1'ffff  0x1'fe5c
-  0x2000'0810  0x2000'7fff    0x77f0
-
-
-*******************************************************************************
-*** INIT TABLE
-***
-
-          Address      Size
-          -------      ----
-Copy (__iar_copy_init3)
-    1 source range, total size 0x10:
-                0x188  0x10
-    1 destination range, total size 0x10:
-          0x2000'0000  0x10
+        0x128     0x1'ffff  0x1'fed8
+  0x2000'0800  0x2000'7fff    0x7800
 
 
 
@@ -112,73 +90,63 @@ Copy (__iar_copy_init3)
 *** MODULE SUMMARY
 ***
 
-    Module            ro code  ro data  rw data
-    ------            -------  -------  -------
+    Module            ro code  rw data
+    ------            -------  -------
 command line/config:
-    -------------------------------------------
+    ----------------------------------
     Total:
 
 C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\Debug\Obj: [1]
-    main.o                148       16       16
-    -------------------------------------------
-    Total:                148       16       16
+    main.o                148
+    ----------------------------------
+    Total:                148
 
 dl7M_tln.a: [2]
     exit.o                  4
     low_level_init.o        4
-    -------------------------------------------
+    ----------------------------------
     Total:                  8
 
 rt7M_tl.a: [3]
     cexit.o                10
     cmain.o                30
-    copy_init3.o           46
     cstartup_M.o           12
-    data_init.o            40
     vector_table_M.o       66
-    -------------------------------------------
-    Total:                204
+    ----------------------------------
+    Total:                118
 
 shb_l.a: [4]
     exit.o                 20
-    -------------------------------------------
+    ----------------------------------
     Total:                 20
 
-    Gaps                    4
-    Linker created                  20    2'048
------------------------------------------------
-    Grand Total:          384       36    2'064
+    Gaps                    2
+    Linker created               2'048
+--------------------------------------
+    Grand Total:          296    2'048
 
 
 *******************************************************************************
 *** ENTRY LIST
 ***
 
-Entry                       Address  Size  Type      Object
------                       -------  ----  ----      ------
-.iar.init_table$$Base         0x12c         --   Gb  - Linker created -
-.iar.init_table$$Limit        0x140         --   Gb  - Linker created -
-?main                         0x141        Code  Gb  cmain.o [3]
-Analog_digitalControl   0x2000'0008   0x4  Data  Gb  main.o [1]
-CSTACK$$Base            0x2000'0010         --   Gb  - Linker created -
-CSTACK$$Limit           0x2000'0810         --   Gb  - Linker created -
-GPIO_F_port_Control     0x2000'0000   0x4  Data  Gb  main.o [1]
-RGBControl              0x2000'000c   0x4  Data  Gb  main.o [1]
-Region$$Table$$Base           0x12c         --   Gb  - Linker created -
-Region$$Table$$Limit          0x140         --   Gb  - Linker created -
-__cmain                       0x141        Code  Gb  cmain.o [3]
-__exit                        0x175  0x14  Code  Gb  exit.o [4]
-__iar_copy_init3               0xd5  0x2e  Code  Gb  copy_init3.o [3]
-__iar_data_init3              0x105  0x28  Code  Gb  data_init.o [3]
-__iar_program_start           0x199        Code  Gb  cstartup_M.o [3]
-__low_level_init              0x15f   0x4  Code  Gb  low_level_init.o [2]
-__vector_table                  0x0        Data  Gb  vector_table_M.o [3]
-_call_main                    0x14d        Code  Gb  cmain.o [3]
-_exit                         0x169        Code  Gb  cexit.o [3]
-_main                         0x15b        Code  Gb  cmain.o [3]
-exit                          0x163   0x4  Code  Gb  exit.o [2]
-main                           0x41  0x94  Code  Gb  main.o [1]
-pinInOutControl         0x2000'0004   0x4  Data  Gb  main.o [1]
+Entry                     Address  Size  Type      Object
+-----                     -------  ----  ----      ------
+?main                        0xd5        Code  Gb  cmain.o [3]
+CSTACK$$Base          0x2000'0000         --   Gb  - Linker created -
+CSTACK$$Limit         0x2000'0800         --   Gb  - Linker created -
+Region$$Table$$Base           0x0         --   Gb  - Linker created -
+Region$$Table$$Limit          0x0         --   Gb  - Linker created -
+__cmain                      0xd5        Code  Gb  cmain.o [3]
+__exit                      0x109  0x14  Code  Gb  exit.o [4]
+__iar_program_start         0x11d        Code  Gb  cstartup_M.o [3]
+__low_level_init             0xf3   0x4  Code  Gb  low_level_init.o [2]
+__vector_table                0x0        Data  Gb  vector_table_M.o [3]
+_call_main                   0xe1        Code  Gb  cmain.o [3]
+_exit                        0xfd        Code  Gb  cexit.o [3]
+_main                        0xef        Code  Gb  cmain.o [3]
+exit                         0xf7   0x4  Code  Gb  exit.o [2]
+main                         0x41  0x94  Code  Gb  main.o [1]
 
 
 [1] = C:\Users\dell-pc\Documents\Embedded_Programming\SimpleLED\Debug\Obj
@@ -186,9 +154,8 @@ pinInOutControl         0x2000'0004   0x4  Data  Gb  main.o [1]
 [3] = rt7M_tl.a
 [4] = shb_l.a
 
-    384 bytes of readonly  code memory
-     36 bytes of readonly  data memory
-  2'064 bytes of readwrite data memory
+    296 bytes of readonly  code memory
+  2'048 bytes of readwrite data memory
 
 Errors: none
 Warnings: none

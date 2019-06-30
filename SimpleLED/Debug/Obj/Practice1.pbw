@@ -73766,63 +73766,7 @@
     "scope": null
   },
   {
-    "ID": "c:@GPIO_F_port_Control",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "GPIO_F_port_Control",
-    "location": {
-      "column": "15",
-      "line": "3",
-      "path": "C:\\Users\\dell-pc\\Documents\\Embedded_Programming\\SimpleLED\\main.c"
-    },
-    "name": "GPIO_F_port_Control",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@pinInOutControl",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "pinInOutControl",
-    "location": {
-      "column": "15",
-      "line": "4",
-      "path": "C:\\Users\\dell-pc\\Documents\\Embedded_Programming\\SimpleLED\\main.c"
-    },
-    "name": "pinInOutControl",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@Analog_digitalControl",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "Analog_digitalControl",
-    "location": {
-      "column": "15",
-      "line": "5",
-      "path": "C:\\Users\\dell-pc\\Documents\\Embedded_Programming\\SimpleLED\\main.c"
-    },
-    "name": "Analog_digitalControl",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@RGBControl",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "RGBControl",
-    "location": {
-      "column": "15",
-      "line": "6",
-      "path": "C:\\Users\\dell-pc\\Documents\\Embedded_Programming\\SimpleLED\\main.c"
-    },
-    "name": "RGBControl",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@662@macro@LED_RED",
+    "ID": "c:main.c@670@macro@LED_RED",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "LED_RED",
@@ -73836,7 +73780,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@692@macro@LED_BLUE",
+    "ID": "c:main.c@700@macro@LED_BLUE",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "LED_BLUE",
@@ -73850,7 +73794,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@722@macro@LED_GREEN",
+    "ID": "c:main.c@730@macro@LED_GREEN",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "LED_GREEN",
@@ -73878,13 +73822,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@947@F@main@counter",
+    "ID": "c:main.c@1314@F@main@counter",
     "What": "Variable",
     "defdec": "Def",
     "display": "counter",
     "location": {
       "column": "9",
-      "line": "20",
+      "line": "24",
       "path": "C:\\Users\\dell-pc\\Documents\\Embedded_Programming\\SimpleLED\\main.c"
     },
     "name": "counter",
