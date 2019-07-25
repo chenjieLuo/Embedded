@@ -1,5 +1,6 @@
 #include <stdint.h>  /* Standard integers. WG14/N843 C99 Standard */
 #include "bsp.h"
+#include "miros.h"
 #include "TM4C123GH6PM.h" /* the TM4C MCU Peripheral Access Layer (TI) */
 
 #define LED_RED   (1U << 1)
@@ -67,7 +68,7 @@ void BSP_ledGreenOff(void) {
 
 void Q_onAssert(char const *module, int loc) {
     /* TBD: damage control */
-    (void)module; /* avoid the "unused parameter" compiler warning */
-    (void)loc;    /* avoid the "unused parameter" compiler warning */
+    (void)module; 
+    (void)loc;
     NVIC_SystemReset();
 }

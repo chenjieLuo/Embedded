@@ -29,14 +29,25 @@ Project File Date:  07/03/2019
 Rebuild target 'dbg'
 assembling startup_TM4C123GH6PM.s...
 compiling main.c...
-main.c(54): warning:  #111-D: statement is unreachable
+miros.h(20): warning:  #1-D: last line of file ends without a newline
+  #endif
+main.c(39): warning:  #111-D: statement is unreachable
       return 0;
-main.c: 1 warning, 0 errors
+main.c: 2 warnings, 0 errors
+compiling miros.c...
+miros.h(20): warning:  #1-D: last line of file ends without a newline
+  #endif
+miros.c(71): warning:  #1-D: last line of file ends without a newline
+  }
+miros.c: 2 warnings, 0 errors
 compiling system_TM4C123GH6PM.c...
 compiling bsp.c...
+miros.h(20): warning:  #1-D: last line of file ends without a newline
+  #endif
+bsp.c: 1 warning, 0 errors
 linking...
-Program Size: Code=1620 RO-data=652 RW-data=16 ZI-data=1456  
-".\dbg\RTOS.axf" - 0 Error(s), 1 Warning(s).
+Program Size: Code=1584 RO-data=652 RW-data=16 ZI-data=1456  
+".\dbg\RTOS.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 

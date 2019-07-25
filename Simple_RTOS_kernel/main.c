@@ -1,8 +1,9 @@
 #include <stdint.h>
+#include "miros.h"
 #include "bsp.h"
 
 uint32_t stack_thread1[40];
-uint32_t *sp_thread1 = &stack_thread1[40];
+OSThread sp_thread1;
 void my_thread1() {
     while (1) {
         BSP_ledGreenOn();
@@ -13,7 +14,7 @@ void my_thread1() {
 }
 
 uint32_t stack_thread2[40];
-uint32_t *sp_thread2 = &stack_thread2[40];
+OSThread sp_thread2;
 void my_thread2() {
     while (1) {
         BSP_ledBlueOn();
@@ -27,26 +28,10 @@ void my_thread2() {
 //Background
 int main() {
     BSP_init();
+		OS_init();
 
-    //According to Cortex-M4, all right registers will be saved
-    *(--sp_thread1) = (1U << 24);  /* xPSR */
-    *(--sp_thread1) = (uint32_t)&my_thread1; /* PC */
-    *(--sp_thread1) = 0x0000000EU; /* LR  */
-    *(--sp_thread1) = 0x0000000CU; /* R12 */
-    *(--sp_thread1) = 0x00000003U; /* R3  */
-    *(--sp_thread1) = 0x00000002U; /* R2  */
-    *(--sp_thread1) = 0x00000001U; /* R1  */
-    *(--sp_thread1) = 0x00000000U; /* R0  */
-
-    //According to Cortex-M4, all right registers will be saved
-    *(--sp_thread2) = (1U << 24);  /* xPSR */
-    *(--sp_thread2) = (uint32_t)&my_thread2; /* PC */
-    *(--sp_thread2) = 0x0000000EU; /* LR  */
-    *(--sp_thread2) = 0x0000000CU; /* R12 */
-    *(--sp_thread2) = 0x00000003U; /* R3  */
-    *(--sp_thread2) = 0x00000002U; /* R2  */
-    *(--sp_thread2) = 0x00000001U; /* R1  */
-    *(--sp_thread2) = 0x00000000U; /* R0  */
+    OSThread_start(&sp_thread1, &my_thread1, stack_thread1, sizeof(stack_thread1));
+    OSThread_start(&sp_thread2, &my_thread2, stack_thread2, sizeof(stack_thread2));
 
     while (1) {
     }
