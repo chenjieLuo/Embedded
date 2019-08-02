@@ -134,11 +134,11 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4096</DriverSelection>
+            <DriverSelection>4097</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -323,7 +323,7 @@
             <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>1</uSurpInc>
-            <uC99>0</uC99>
+            <uC99>1</uC99>
             <useXO>0</useXO>
             <v6Lang>0</v6Lang>
             <v6LangP>0</v6LangP>
@@ -334,9 +334,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>__FPU_PRESENT</Define>
+              <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.;..\qpc\3rd_party\CMSIS\Include;..\qpc\3rd_party\ek-tm4c123gxl</IncludePath>
+              <IncludePath>.;..\qpc\include;..\qpc\src;..\qpc\3rd_party\CMSIS\Include;..\qpc\3rd_party\ek-tm4c123gxl</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -421,14 +421,14 @@
           <GroupName>MiROS</GroupName>
           <Files>
             <File>
-              <FileName>miros.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\miros.c</FilePath>
-            </File>
-            <File>
               <FileName>miros.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\miros.h</FilePath>
+            </File>
+            <File>
+              <FileName>miros.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\miros.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -11,6 +11,10 @@ void OS_init(void);
 
 void OS_sched(void);
 
+void OS_run(void);
+
+void OS_onStartup(void);
+
 void OSThread_start(
 		OSThread *me,
 		OSThreadHandler threadHandler,
